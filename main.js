@@ -7,7 +7,7 @@ crosshairs.onSnapshot(snap => {
     for(const ans of snap.docChanges()){
         if(ans.type === "added"){
             displayDB.innerHTML += `
-                <div class="crosshair-container" id="${ans.doc.id}">
+                <div class="crosshair-container">
                     <div class="more-box">
                         <span onclick="showMore(this)" class="material-icons dropdownBtn">more_vert</span>
                         <div id="dropdown" class="more-box-dropdown">
@@ -27,37 +27,15 @@ crosshairs.onSnapshot(snap => {
                     <h3>Likes:</h3>
                     <div class="likes-box">
                         <span class="material-icons">whatshot</span>
-                        <p>${ans.doc.data().likeCount}</p>            
+                        <p id="${ans.doc.id}">${ans.doc.data().likeCount}</p>            
                     </div>
                 </div>
             `;
         }
         else if(ans.type === "modified"){
-            let docItem = document.getElementById(ans.doc.id)
-            if(docItem){
-                docItem.innerHTML = `
-                    <div class="more-box">
-                        <span onclick="showMore(this)" class="material-icons dropdownBtn">more_vert</span>
-                        <div id="dropdown" class="more-box-dropdown">
-                            <a>
-                                <span class="material-icons">content_copy</span><span>Copy</span>                    
-                            </a>
-                            <a>
-                                <span class="material-icons" onclick="likeCrosshair(${ans.doc.id})">whatshot</span><span>Like</span>                    
-                            </a>
-                        </div>
-                    </div>
-                    <img src="${ans.doc.data().img}" alt="missing img">
-                    <h3>Description</h3>
-                    <p>${ans.doc.data().desc}</p>
-                    <h3>Crosshair Code:</h3>
-                    <p>${ans.doc.data().crosshair}</p>
-                    <h3>Likes:</h3>
-                    <div class="likes-box">
-                        <span class="material-icons">whatshot</span>
-                        <p>${ans.doc.data().likeCount}</p>            
-                    </div>
-                `
+            let likeCountEl = document.getElementById(ans.doc.id)
+            if(likeCountEl){
+                likeCountEl.innerHTML = ans.doc.data().likeCount
             }
         }
     }
