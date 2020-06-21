@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyA9QrdS8dM7VxiVV2ebQjexecQtx_GEe-s",
+        authDomain: "csgocrosshair-ae135.firebaseapp.com",
+        databaseURL: "https://csgocrosshair-ae135.firebaseio.com",
+        projectId: "csgocrosshair-ae135",
+        storageBucket: "csgocrosshair-ae135.appspot.com",
+        messagingSenderId: "538020268618",
+        appId: "1:538020268618:web:de2238f9536021e461f4b3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="left-nav">
+            <a href="./index.html">
+                <span class="material-icons">menu</span>
+            </a>
+        </div>
+        <div class="middle-nav">
+            <a href="./index.html">CS:GO Crosshairs</a>
+        </div>
+        <div class="right-nav">
+            <a href="#">
+                <span class="material-icons">arrow_circle_up</span>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="upload-box-container">
+            <h1>Upload your CS:GO Crosshair</h1>
+            <div class="upload-box">
+                <input id="imgInput" type="text" class="upload-txt" style="height: auto;" placeholder="IMG-url">
+                <textarea id="descriptionInput" class="upload-txt" type="text" placeholder="Description"></textarea>
+                <textarea id="crosshairInput" class="upload-txt" type="text" placeholder="Crosshair Code"></textarea>
+                <div id="sendButton" class="upload-box-send">
+                    <span class="material-icons">send</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="./upload.js"></script>
+</body>
+</html>
