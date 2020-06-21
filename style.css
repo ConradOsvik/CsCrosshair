@@ -2,6 +2,15 @@ body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #212121;
+    animation: fadein 300ms ease-in-out forwards;
+}
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
 }
 a{
     color: #ffffff;
@@ -70,13 +79,73 @@ main h1{
     justify-content: center;
     align-items: center;
     margin: 10px 0;
+    position: relative;
 }
 .crosshair-container > *{
     padding: 0;
     margin: 10px;
 }
 .crosshair-container img{
-    width: 700px;
+    width: 650px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.more-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.dropdownBtn{
+    padding: 10px;
+    border-radius: 50%;
+    user-select: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+.dropdownBtn:hover{
+    background-color: #424242;
+}
+.more-box-dropdown{
+    position: absolute;
+    display: none;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    width: 150px;
+    background-color: #424242;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.more-box-dropdown a:first-child{
+    margin-top: 5px;
+}
+.more-box-dropdown a:last-child{
+    margin-bottom: 5px;
+}
+.more-box-dropdown a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+.more-box-dropdown a:hover{
+    background-color: #848484;
+}
+.more-box-dropdown span{
+    font-size: 20px;
+    padding: 5px;
+}
+.likes-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .upload-box-container{
