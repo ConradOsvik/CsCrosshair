@@ -17,7 +17,8 @@ sendButton.addEventListener('click', e => {
         crosshairs.doc(timeMSString).set({
             img: imgInput.value,
             desc: descriptionInput.value,
-            crosshair: crosshairInput.value
+            crosshair: crosshairInput.value,
+            likeCount: Number(0)
         });
         imgInput.value = '';
         descriptionInput.value = '';

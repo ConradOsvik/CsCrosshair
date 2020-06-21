@@ -14,8 +14,8 @@ crosshairs.onSnapshot(snap => {
                             <a>
                                 <span class="material-icons">content_copy</span><span>Copy</span>                    
                             </a>
-                            <a>
-                                <span class="material-icons" onclick="likeCrosshair(${ans.doc.id})">whatshot</span><span>Like</span>                    
+                            <a onclick="likeCrosshair(${ans.doc.id})">
+                                <span class="material-icons">whatshot</span><span>Like</span>                    
                             </a>
                         </div>
                     </div>
