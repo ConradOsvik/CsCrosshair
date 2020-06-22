@@ -80,6 +80,7 @@ main h1{
     align-items: center;
     margin: 10px 0;
     position: relative;
+    animation: fadein 300ms ease-in-out forwards;
 }
 .crosshair-container > *{
     padding: 0;

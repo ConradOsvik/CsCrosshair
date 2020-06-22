@@ -11,7 +11,7 @@ crosshairs.onSnapshot(snap => {
                     <div class="more-box">
                         <span onclick="showMore(this)" class="material-icons dropdownBtn">more_vert</span>
                         <div id="dropdown" class="more-box-dropdown">
-                            <a>
+                            <a onclick="copyToClipboard(this)">
                                 <span class="material-icons">content_copy</span><span>Copy</span>                    
                             </a>
                             <a onclick="likeCrosshair(${ans.doc.id})">
@@ -23,7 +23,7 @@ crosshairs.onSnapshot(snap => {
                     <h3>Description</h3>
                     <p>${ans.doc.data().desc}</p>
                     <h3>Crosshair Code:</h3>
-                    <p>${ans.doc.data().crosshair}</p>
+                    <p class="crosshair-code">${ans.doc.data().crosshair}</p>
                     <h3>Likes:</h3>
                     <div class="likes-box">
                         <span class="material-icons">whatshot</span>
@@ -56,6 +56,17 @@ window.onclick = function(event) {
         }
         }
     }
+}
+
+const copyToClipboard = (el) => {
+    const codeString = el.parentNode.parentNode.parentNode.childNodes[11];
+    const text = codeString.innerText;
+    var elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = text;
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
 }
 
 const likeCrosshair = async (id) => {
